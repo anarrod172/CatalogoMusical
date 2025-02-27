@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+	<head>
+		 <meta charset="UTF-8">
+		 <title>Discografica</title>
+		<style>
+        table {
+            width: 100%;
+            border-collapse: collapse; /* Combina los bordes de las celdas */
+        }
+
+        th, td {
+            border: 1px solid black; /* Define un borde de 1px de grosor y color negro */
+            padding: 8px; /* Espaciado dentro de las celdas */
+            text-align: left; /* Alineación del texto */
+        }
+
+        th {
+            background-color: #f2f2f2; /* Fondo gris claro para las celdas de encabezado */
+        }
+    </style>
+	</head>
+	<body>
+		<table>
+		       <thead>
+		           <tr>
+		               <th>Nombre</th>
+		               <th>Dirección</th>
+						<th>Telefono</th>
+		           </tr>
+		       </thead>
+		       <tbody>
+		           <tr th:each="discografica : ${discograficas}">
+		               <td th:text="${discografica.nombre}">Nombre de la discográfica</td>
+		               <td th:text="${discografica.direccion}">Calle</td>
+						<td th:text="${discografica.telefono}">0000000000</td>
+		           </tr>
+		       </tbody>
+		   </table>
+	</body>
+</html>
